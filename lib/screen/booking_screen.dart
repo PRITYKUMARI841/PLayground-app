@@ -26,14 +26,14 @@ class _BookingScreenState extends State<BookingScreen> {
       );
       return;
     }
-    final formattedDate = DateFormat('yyyy-MM-dd').format(selectedDate!);
+    // final formattedDate = DateFormat('yyyy-MM-dd').format(selectedDate!);
     // for storing the booking slot
 
-    await BookingStore.saveBooking(
-      selectedGround!.name,
-      formattedDate,
-      selectedSlot!,
-    );
+    // await BookingStore.saveBooking(
+    //   selectedGround!.name,
+    //   formattedDate,
+    //   selectedSlot!,
+    // );
 
     showDialog(
       context: context,
@@ -66,10 +66,6 @@ class _BookingScreenState extends State<BookingScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Text(
-            //   'Ground:${widget.ground.name}',
-            //   style: TextStyle(fontSize: 18),
-            // ),
             SizedBox(height: 20),
             DropdownButtonFormField<Ground>(
               decoration: InputDecoration(
@@ -144,68 +140,68 @@ class _BookingScreenState extends State<BookingScreen> {
             // Spacer(),
             SizedBox(height: 30),
 
-            if (selectedGround != null &&
-                selectedDate != null &&
-                selectedSlot != null)
-              // Card(
-              //   elevation: 4,
-              //   shape: RoundedRectangleBorder(
-              //     borderRadius: BorderRadius.circular(12),
-              //   ),
-              //   margin: const EdgeInsets.symmetric(
-              //     vertical: 20,
-              //     horizontal: 20,
-              //   ),
-              //   child: Padding(
-              //     padding: const EdgeInsets.all(16),
-              //     child: Column(
-              //       crossAxisAlignment: CrossAxisAlignment.start,
-              //       children: [
-              //         const Text(
-              //           "Booking Preview",
-              //           style: TextStyle(
-              //             fontSize: 18,
-              //             fontWeight: FontWeight.bold,
-              //             color: Colors.blueAccent,
-              //           ),
-              //         ),
-              //         const SizedBox(height: 10),
-              //         Text(
-              //           " Ground: ${selectedGround!.name}",
-              //           style: const TextStyle(fontSize: 16),
-              //         ),
-              //         Text(
-              //           " Date: ${DateFormat('yyyy-MM-dd').format(selectedDate!)}",
-              //           style: const TextStyle(fontSize: 16),
-              //         ),
-              //         Text(
-              //           "Time: $selectedSlot",
-              //           style: const TextStyle(fontSize: 16),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              // Spacer(),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.deepPurple,
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                  elevation: 3,
+            // if (selectedGround != null &&
+            //     selectedDate != null &&
+            //     selectedSlot != null)
+            // Card(
+            //   elevation: 4,
+            //   shape: RoundedRectangleBorder(
+            //     borderRadius: BorderRadius.circular(12),
+            //   ),
+            //   margin: const EdgeInsets.symmetric(
+            //     vertical: 20,
+            //     horizontal: 20,
+            //   ),
+            //   child: Padding(
+            //     padding: const EdgeInsets.all(16),
+            //     child: Column(
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       children: [
+            //         const Text(
+            //           "Booking Preview",
+            //           style: TextStyle(
+            //             fontSize: 18,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.blueAccent,
+            //           ),
+            //         ),
+            //         const SizedBox(height: 10),
+            //         Text(
+            //           " Ground: ${selectedGround!.name}",
+            //           style: const TextStyle(fontSize: 16),
+            //         ),
+            //         Text(
+            //           " Date: ${DateFormat('yyyy-MM-dd').format(selectedDate!)}",
+            //           style: const TextStyle(fontSize: 16),
+            //         ),
+            //         Text(
+            //           "Time: $selectedSlot",
+            //           style: const TextStyle(fontSize: 16),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            // Spacer(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.deepPurple,
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
-
-                onPressed: () {
-                  _confirmBooking();
-                },
-                child: Text(
-                  'Confirm Booking',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-                ),
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                elevation: 3,
               ),
+
+              onPressed: () {
+                _confirmBooking();
+              },
+              child: Text(
+                'Confirm Booking',
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+              ),
+            ),
           ],
         ),
       ),
